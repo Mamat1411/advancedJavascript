@@ -61,10 +61,9 @@
 
 //Closure Concept Implementation
 function init() {
-    let name = "Mamat";
-    function printName() {
+    return function(name) {
         console.log(name);
     }
-    console.dir(printName);
 }
-init();
+let callTheName = init();
+callTheName('Mamat');
