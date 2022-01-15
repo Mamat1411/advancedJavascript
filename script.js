@@ -69,16 +69,29 @@
 // callTheName('Mamat');
 
 //Function Factories Implementation
-function greetings(time) {
-    return function (name) {
-        console.log(`Hello ${name}, Good ${time}. Have a nice day!`);
+// function greetings(time) {
+//     return function (name) {
+//         console.log(`Hello ${name}, Good ${time}. Have a nice day!`);
+//     }
+// }
+
+// let morning = greetings('Morning');
+// let afternoon = greetings('Afternoon');
+// let evening = greetings('Evening');
+
+// morning('Mamat');
+// afternoon('Sari');
+// evening('Muhammad');
+
+//Private Methods Using Closure
+let add = (function (){
+    let counter = 0;
+    return function () {
+        return ++counter;
     }
-}
+})();
 
-let morning = greetings('Morning');
-let afternoon = greetings('Afternoon');
-let evening = greetings('Evening');
-
-morning('Mamat');
-afternoon('Sari');
-evening('Muhammad');
+console.log(add());
+console.log(add());
+console.log(add());
+console.log(add());
