@@ -37,24 +37,34 @@
 // let student2 = students("Mamat", 10);
 
 //3. Constructor Created Object(new keyword)
-function Students(name, energy) {
-    this.name = name;
-    this.energy = energy;
-}
+// function Students(name, energy) {
+//     this.name = name;
+//     this.energy = energy;
+// }
 
-Students.prototype.eat = function(portions){
-    this.energy += portions;
-    return `Enjoy The Food ${this.name}!`;
-}
+// Students.prototype.eat = function(portions){
+//     this.energy += portions;
+//     return `Enjoy The Food ${this.name}!`;
+// }
 
-Students.prototype.game = function(hours){
-    this.energy -= hours;
-    return `Happy Gaming ${this.name}!`;
-}
+// Students.prototype.game = function(hours){
+//     this.energy -= hours;
+//     return `Happy Gaming ${this.name}!`;
+// }
 
-Students.prototype.sleep = function(hours){
-    this.energy += hours * 2;
-    return `Have A Nice Dream ${this.name}!`;
-}
+// Students.prototype.sleep = function(hours){
+//     this.energy += hours * 2;
+//     return `Have A Nice Dream ${this.name}!`;
+// }
 
-let student1 = new Students("Muhammad", 10);
+// let student1 = new Students("Muhammad", 10);
+
+//Closure Concept Implementation
+function init() {
+    let name = "Mamat";
+    function printName() {
+        console.log(name);
+    }
+    console.dir(printName);
+}
+init();
