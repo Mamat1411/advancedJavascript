@@ -60,10 +60,25 @@
 // let student1 = new Students("Muhammad", 10);
 
 //Closure Concept Implementation
-function init() {
-    return function(name) {
-        console.log(name);
+// function init() {
+//     return function(name) {
+//         console.log(name);
+//     }
+// }
+// let callTheName = init();
+// callTheName('Mamat');
+
+//Function Factories Implementation
+function greetings(time) {
+    return function (name) {
+        console.log(`Hello ${name}, Good ${time}. Have a nice day!`);
     }
 }
-let callTheName = init();
-callTheName('Mamat');
+
+let morning = greetings('Morning');
+let afternoon = greetings('Afternoon');
+let evening = greetings('Evening');
+
+morning('Mamat');
+afternoon('Sari');
+evening('Muhammad');
