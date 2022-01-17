@@ -84,14 +84,43 @@
 // evening('Muhammad');
 
 //Private Methods Using Closure
-let add = (function (){
-    let counter = 0;
-    return function () {
-        return ++counter;
-    }
-})();
+// let add = (function (){
+//     let counter = 0;
+//     return function () {
+//         return ++counter;
+//     }
+// })();
 
-console.log(add());
-console.log(add());
-console.log(add());
-console.log(add());
+// console.log(add());
+// console.log(add());
+// console.log(add());
+// console.log(add());
+
+//Simple Arrow Function
+// const printName = (name) => {
+//     return `Hello, ${name}`;
+// }
+// console.log(printName('Mamat'));
+
+//Arrow Function Multiple Parameters
+// const greetings = (name, time) => {
+//     return `Hello ${name}, Good ${time}`;
+// }
+// console.log(greetings('Mamat', 'Morning'));
+
+//Arrow Function Implicit Return
+// const printName = name => `Hello, ${name}`;
+// console.log(printName('Mamat'));
+
+//Arrow Function with various operations
+let students = ['Mamat', 'Sari'];
+// let lettersOfEach = students.map(function (name) {
+//     return name.length;
+// });
+// console.log(lettersOfEach);
+
+// let lettersOfEach = students.map(name => name.length);
+// console.log(lettersOfEach);
+
+let lettersOfEach = students.map(name => ({ name, letters: name.length }));
+console.table(lettersOfEach);
