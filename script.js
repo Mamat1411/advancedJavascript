@@ -113,7 +113,7 @@
 // console.log(printName('Mamat'));
 
 //Arrow Function with various operations
-let students = ['Mamat', 'Sari'];
+// let students = ['Mamat', 'Sari'];
 // let lettersOfEach = students.map(function (name) {
 //     return name.length;
 // });
@@ -122,5 +122,49 @@ let students = ['Mamat', 'Sari'];
 // let lettersOfEach = students.map(name => name.length);
 // console.log(lettersOfEach);
 
-let lettersOfEach = students.map(name => ({ name, letters: name.length }));
-console.table(lettersOfEach);
+// let lettersOfEach = students.map(name => ({ name, letters: name.length }));
+// console.table(lettersOfEach);
+
+//This Concept on Arrow Function
+
+//Constructor Made Object
+// const students = function(){
+//     this.name = 'Mamat';
+//     this.age = 23;
+//     this.sayHello = function () {
+//         return `Hello, My name is ${this.name} and I am ${this.age} years old`;
+//     }
+// }
+// const mamat = new students();
+
+//Method Creation using arrow function
+//Note: Arrow Function does not recognize "this" concept
+// const students = function(){
+//     this.name = 'Mamat';
+//     this.age = 23;
+//     this.sayHello = () => {
+//         return `Hello, My name is ${this.name} and I am ${this.age} years old`;
+//     }
+// }
+// const mamat = new students();
+
+// const students1 = {
+//     name: 'Mamat',
+//     age:  23,
+//     sayHello: () => {
+//         console.log(`Hello, My name is ${this.name} and I am ${this.age} years old`);
+//     }
+// }
+
+// const students = function(){
+//     this.name = 'Mamat';
+//     this.age = 23;
+//     this.sayHello = function() {
+//         return `Hello, My name is ${this.name} and I am ${this.age} years old`;
+//     }
+
+//     // setInterval(() => {
+//     //     console.log(this.age++);
+//     // }, 3000);
+// }
+// const mamat = new students();
