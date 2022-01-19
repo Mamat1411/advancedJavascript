@@ -196,7 +196,7 @@
 
 // doTask('New Software AG API', done);
 
-//"Filter" Function in Higher Order Function Concept
+//"Filter" and "Map" Function in Higher Order Function Concept
 //Initial Array
 const numbers = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
@@ -210,5 +210,9 @@ const numbers = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 // console.log(moreThanThree);
 
 //looking for 3 or higher numbers with "Filter"
-const moreThanThree = numbers.filter((n) => n >= 3);
-console.log(moreThanThree);
+// const moreThanThree = numbers.filter((n) => n >= 3);
+// console.log(moreThanThree);
+
+//multiplying each element of the array by 2
+const multipliedBy2 = numbers.map((n) => n * 2);
+console.log(multipliedBy2);
