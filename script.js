@@ -219,5 +219,12 @@ const numbers = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
 //summing each element of the array using "reduce"
 // -1 + 8 + 9 + 1 + 4 + -5 + -4 + 3 + 2 + 9
-const sumUp = numbers.reduce((accumulator, currentValue) => accumulator + currentValue); //by default, reduce has initial value of 0 after currentValue
-console.log(sumUp);
+// const sumUp = numbers.reduce((accumulator, currentValue) => accumulator + currentValue); //by default, reduce has initial value of 0 after currentValue
+// console.log(sumUp);
+
+//Method Chaining
+//looking numbers higher than 5 and multiplying them by 3, and then summing them up
+const total = numbers.filter((n) => n > 5)
+              .map((n) => n * 3)
+              .reduce((accumulator, currentValue) => accumulator + currentValue);
+console.log(total);
