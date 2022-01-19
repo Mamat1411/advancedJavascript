@@ -196,7 +196,7 @@
 
 // doTask('New Software AG API', done);
 
-//"Filter" and "Map" Function in Higher Order Function Concept
+//"Filter", "Map", "Reduce" Function in Higher Order Function Concept
 //Initial Array
 const numbers = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
@@ -213,6 +213,11 @@ const numbers = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 // const moreThanThree = numbers.filter((n) => n >= 3);
 // console.log(moreThanThree);
 
-//multiplying each element of the array by 2
-const multipliedBy2 = numbers.map((n) => n * 2);
-console.log(multipliedBy2);
+//multiplying each element of the array by 2 using "Map"
+// const multipliedBy2 = numbers.map((n) => n * 2);
+// console.log(multipliedBy2);
+
+//summing each element of the array using "reduce"
+// -1 + 8 + 9 + 1 + 4 + -5 + -4 + 3 + 2 + 9
+const sumUp = numbers.reduce((accumulator, currentValue) => accumulator + currentValue); //by default, reduce has initial value of 0 after currentValue
+console.log(sumUp);
