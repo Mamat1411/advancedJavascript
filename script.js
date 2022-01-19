@@ -169,17 +169,29 @@
 // }
 // const mamat = new students();
 
-const box = document.querySelector('.box');
-box.addEventListener('click', function () {
-    let one = 'size';
-    let two = 'caption';
+// const box = document.querySelector('.box');
+// box.addEventListener('click', function () {
+//     let one = 'size';
+//     let two = 'caption';
 
-    if (this.classList.contains(one)) {
-        [one, two] = [two, one];
-    }
+//     if (this.classList.contains(one)) {
+//         [one, two] = [two, one];
+//     }
 
-    this.classList.toggle(one);
-    setTimeout(() => {
-        this.classList.toggle(two);
-    }, 600);
-})
+//     this.classList.toggle(one);
+//     setTimeout(() => {
+//         this.classList.toggle(two);
+//     }, 600);
+// })
+
+//Higher Order Function
+function doTask(task, done) {
+    console.log(`The ${task} is now in the doing`);
+    done();
+}
+
+function done() {
+    console.log(`Task is Done`);
+}
+
+doTask('New Software AG API', done);
