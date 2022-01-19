@@ -185,13 +185,30 @@
 // })
 
 //Higher Order Function
-function doTask(task, done) {
-    console.log(`The ${task} is now in the doing`);
-    done();
-}
+// function doTask(task, done) {
+//     console.log(`The ${task} is now in the doing`);
+//     done();
+// }
 
-function done() {
-    console.log(`Task is Done`);
-}
+// function done() {
+//     console.log(`Task is Done`);
+// }
 
-doTask('New Software AG API', done);
+// doTask('New Software AG API', done);
+
+//"Filter" Function in Higher Order Function Concept
+//Initial Array
+const numbers = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+
+//looking for 3 or higher numbers with simple for loop
+// const moreThanThree = [];
+// for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] >= 3) {
+//         moreThanThree.push(numbers[i]); 
+//     }
+// }
+// console.log(moreThanThree);
+
+//looking for 3 or higher numbers with "Filter"
+const moreThanThree = numbers.filter((n) => n >= 3);
+console.log(moreThanThree);
