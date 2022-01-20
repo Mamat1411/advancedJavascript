@@ -198,7 +198,7 @@
 
 //"Filter", "Map", "Reduce" Function in Higher Order Function Concept
 //Initial Array
-const numbers = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+// const numbers = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
 //looking for 3 or higher numbers with simple for loop
 // const moreThanThree = [];
@@ -224,7 +224,33 @@ const numbers = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
 //Method Chaining
 //looking numbers higher than 5 and multiplying them by 3, and then summing them up
-const total = numbers.filter((n) => n > 5)
-              .map((n) => n * 3)
-              .reduce((accumulator, currentValue) => accumulator + currentValue);
-console.log(total);
+// const total = numbers.filter((n) => n > 5)
+//               .map((n) => n * 3)
+//               .reduce((accumulator, currentValue) => accumulator + currentValue);
+// console.log(total);
+
+//Take all video elements
+const videos = Array.from(document.querySelectorAll('[data-duration]'));
+//Choose only Advanced Javascript
+let advancedJavascript = videos.filter(v => v.textContent.includes('ADVANCED JAVASCRIPT'))
+//Take the duration
+.map(item => item.dataset.duration)
+//Convert duration to float datatype and convert minutes to seconds
+.map(time => {
+    //10:30 -> [10,30] split
+    const seconds = time.split(':').map(second => parseFloat(second));
+    return (seconds[0] * 60) + seconds[1];
+})
+//Sum up the seconds
+.reduce((sum, sec) => sum + sec);
+//Convert the seconds into a time format
+const hours = Math.floor(advancedJavascript/3600);
+advancedJavascript = advancedJavascript - hours * 3600;
+const minutes = Math.floor(advancedJavascript / 60);
+const seconds = Math.floor(advancedJavascript - minutes * 60);
+//Save it in DOM
+const duration = document.querySelector('.total-duration');
+duration.textContent = `${hours} Hours, ${minutes} Minutes, ${seconds} Seconds.`;
+const totalVideos = videos.filter(v => v.textContent.includes('ADVANCED JAVASCRIPT')).length;
+const sumVideos = document.querySelector('.total-videos');
+sumVideos.textContent = `${totalVideos} videos.`;
