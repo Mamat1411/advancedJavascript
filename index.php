@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h3>My Videos</h3>
+    <!-- <h3>My Videos</h3>
     <ul>
         <li data-duration="15:27">Podomoro Technique</li>
         <li data-duration="11:18">ADVANCED JAVASCRIPT | Higher Order Functions</li>
@@ -31,7 +31,7 @@
             <p>Total Videos: <span class="total-videos"></span></p>
             <p>Total Duration: <span class="total-duration"></span></p>
         </li>
-    </ol>
+    </ol> -->
 <script src="script.js"></script>
 </body>
 </html>
