@@ -254,3 +254,25 @@
 // const totalVideos = videos.filter(v => v.textContent.includes('ADVANCED JAVASCRIPT')).length;
 // const sumVideos = document.querySelector('.total-videos');
 // sumVideos.textContent = `${totalVideos} videos.`;
+
+//Literal Templates
+// const name = 'Muhammad';
+// let age = 23;
+//Simple Literal Template
+// console.log(`Hello, My name is ${name} and I am ${age} years old.`);
+//Embedded Expression
+// console.log(`${alert(`Hello, My name is ${name} and I am ${age} years old.`)}`);
+// const x = 10;
+// console.log(`${(x % 2 == 0) ? 'even' : 'odd'}`);
+//HTML Fragments
+const student = {
+    name: 'Muhammad',
+    age: 23,
+    id: '91000',
+    email: 'muhammadmujahid14@gmail.com'
+};
+const element = `<div class="student">
+                    <h2>${student.name}</h2>
+                    <span class="id">${student.id}</span>
+                </div>`;
+console.log(element);
