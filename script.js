@@ -265,14 +265,78 @@
 // const x = 10;
 // console.log(`${(x % 2 == 0) ? 'even' : 'odd'}`);
 //HTML Fragments
+// const student = {
+//     name: 'Muhammad',
+//     age: 23,
+//     id: '91000',
+//     email: 'muhammadmujahid14@gmail.com'
+// };
+// const element = `<div class="student">
+//                     <h2>${student.name}</h2>
+//                     <span class="id">${student.id}</span>
+//                 </div>`;
+
+//looping using literal template
+// const employee = [
+//     {
+//         name: 'Muhammad',
+//         email: 'muhammadmujahid14@gmail.com'
+//     },
+//     {
+//         name: 'Mamat',
+//         email: 'mamat@gmail.com'
+//     },
+//     {
+//         name: 'Sari',
+//         email: 'sari98@gmail.com'
+//     }
+// ];
+// const element = `<div class="employee">
+//                     ${employee.map(e => 
+//                     `<ul>
+//                         <li>${e.name}</li>
+//                         <li>${e.email}</li>
+//                     </ul>`).join('')}
+//                  </div>`;
+
+//Conditionals
+//Ternary Operation
+// const song = {
+//     title: 'Beauty And The Beast',
+//     singer: 'Justin Bieber',
+//     feat: 'Nicki Minaj'
+// }
+
+// const element = `<div class="song">
+//                     <ul>
+//                         <li>${song.title}</li>
+//                         <li>${song.singer} ${song.feat ? `(feat. ${song.feat})` : ''}</li>
+//                     </ul>
+//                 </div>`;
+
+//Nested HTML Fragments
 const student = {
     name: 'Muhammad',
-    age: 23,
-    id: '91000',
-    email: 'muhammadmujahid14@gmail.com'
+    semester: 5,
+    subjects : [
+    'Web Development',
+    'Information Systems Analysis and Designs',
+    'Interractive Systems Development',
+    'Object Oriented Programming'
+    ]
 };
+function printSubjects(subjects) {
+    return `
+    <ol>
+        ${subjects.map(s => `<li>${s}</li>`).join('')}
+    </ol>
+    `;
+}
 const element = `<div class="student">
-                    <h2>${student.name}</h2>
-                    <span class="id">${student.id}</span>
-                </div>`;
-console.log(element);
+                    <h2>Name: ${student.name}</h2>
+                    <span class="semester">Semester: ${student.semester}</span>
+                    <h4>Subjects: </h4>
+                    ${printSubjects(student.subjects)}
+                 </div>`;
+
+document.body.innerHTML = element;
