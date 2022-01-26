@@ -368,3 +368,100 @@
 
 // const str = highlight`Hello, My name is ${name} and I am ${age} years old and my email address is ${email}.`;
 // document.body.innerHTML = str;
+
+//Destructuring Assignment
+//Array
+// const introduction = ['Hello', 'My Name', 'is', 'Muhammad'];
+// const [greeting, name, toBe, myName] = introduction;
+// console.log(greeting);
+
+//Skipping Items
+// const introduction = ['Hello', 'My Name', 'is', 'Muhammad'];
+// const [greeting, , , name] = introduction;
+// console.log(greeting);
+
+//Swapping Items
+// let a = 1;
+// let b = 2;
+// console.log(a);
+// console.log(b);
+// [a,b] = [b, a];
+// console.log(a);
+// console.log(b);
+
+//return value in function
+// function tryin() {
+//     return [1,2];
+// }
+// const [a,b] = tryin();
+// console.log(b);
+
+//Rest Parameters
+// const [a,...values] = [1, 2, 3, 4, 5];
+// console.log(values);
+
+//Object
+// const employee = {
+//     name: 'Muhammad',
+//     age: 23
+// }
+
+// const {name, age} = employee;
+// console.log(name);
+
+//Non-declared Object Assignment
+// ({name, age} = { name: 'Muhammad', age: 23 });
+// console.log(name);
+
+//Assigning Properties to New Variables
+// const employee = {
+//     name: 'Muhammad',
+//     age: 23
+// }
+
+// const {name: n, age: a} = employee;
+// console.log(n);'
+
+//Default Value Assignment
+// const employee = {
+//     name: 'Muhammad',
+//     age: 23,
+//     email: 'muhammadmujahid14@gmail.com'
+// }
+
+// const {name, age, email = 'email@default.com'} = employee;
+// console.log(email);
+
+//Default Value Assignment and Assigning It to New Variables
+// const employee = {
+//     name: 'Muhammad',
+//     age: 23,
+//     email: 'muhammadmujahid14@gmail.com'
+// }
+
+// const {name: n, age: a, email: e = 'email@default.com'} = employee;
+// console.log(e);
+
+//Rest Parameters
+// const employee = {
+//     name: 'Muhammad',
+//     age: 23,
+//     email: 'muhammadmujahid14@gmail.com'
+// }
+
+// const {name, ...value} = employee;
+// console.log(value);
+
+//Getting Field in an Object and after that sending it as a function parameter
+const employee = {
+    id: 123,
+    name: 'Muhammad',
+    age: 23,
+    email: 'muhammadmujahid14@gmail.com'
+}
+
+function getIdEmployee({id}) {
+    return id;
+}
+
+console.log(getIdEmployee(employee));
