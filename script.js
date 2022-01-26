@@ -359,12 +359,12 @@
 // console.log(str);
 
 //Highlighting
-const name = 'Muhammad Mujahid';
-const age = 23;
-const email = 'muhammadmujahid14@gmail.com';
-function highlight(strings, ...args) {
-    return strings.reduce((result, str, i) => `${result}${str}<span class="hl">${args[i] || ''}</span>`, '');
-}
+// const name = 'Muhammad Mujahid';
+// const age = 23;
+// const email = 'muhammadmujahid14@gmail.com';
+// function highlight(strings, ...args) {
+//     return strings.reduce((result, str, i) => `${result}${str}<span class="hl">${args[i] || ''}</span>`, '');
+// }
 
-const str = highlight`Hello, My name is ${name} and I am ${age} years old and my email address is ${email}.`;
-document.body.innerHTML = str;
+// const str = highlight`Hello, My name is ${name} and I am ${age} years old and my email address is ${email}.`;
+// document.body.innerHTML = str;
