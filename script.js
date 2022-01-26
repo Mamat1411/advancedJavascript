@@ -315,28 +315,56 @@
 //                 </div>`;
 
 //Nested HTML Fragments
-const student = {
-    name: 'Muhammad',
-    semester: 5,
-    subjects : [
-    'Web Development',
-    'Information Systems Analysis and Designs',
-    'Interractive Systems Development',
-    'Object Oriented Programming'
-    ]
-};
-function printSubjects(subjects) {
-    return `
-    <ol>
-        ${subjects.map(s => `<li>${s}</li>`).join('')}
-    </ol>
-    `;
-}
-const element = `<div class="student">
-                    <h2>Name: ${student.name}</h2>
-                    <span class="semester">Semester: ${student.semester}</span>
-                    <h4>Subjects: </h4>
-                    ${printSubjects(student.subjects)}
-                 </div>`;
+// const student = {
+//     name: 'Muhammad',
+//     semester: 5,
+//     subjects : [
+//     'Web Development',
+//     'Information Systems Analysis and Designs',
+//     'Interractive Systems Development',
+//     'Object Oriented Programming'
+//     ]
+// };
+// function printSubjects(subjects) {
+//     return `
+//     <ol>
+//         ${subjects.map(s => `<li>${s}</li>`).join('')}
+//     </ol>
+//     `;
+// }
+// const element = `<div class="student">
+//                     <h2>Name: ${student.name}</h2>
+//                     <span class="semester">Semester: ${student.semester}</span>
+//                     <h4>Subjects: </h4>
+//                     ${printSubjects(student.subjects)}
+//                  </div>`;
 
-document.body.innerHTML = element;
+// document.body.innerHTML = element;
+
+//Tagged Templates
+// const name = 'Muhammad Mujahid';
+// const age = 23;
+
+// function trying(strings, ...args) {
+//     // let result = '';
+//     // strings.forEach((str, i) => {
+//     //     result += `${str}${args[i] || ''}`;
+//     // });
+//     // return result;
+
+//     return strings.reduce((result, str, i) => `${result}${str}${args[i] || ''}`, '');
+// }
+
+// const str = trying`Hello, My name is ${name} and I am ${age} years old.`;
+// console.log(str);
+
+//Highlighting
+const name = 'Muhammad Mujahid';
+const age = 23;
+const email = 'muhammadmujahid14@gmail.com';
+function highlight(strings, ...args) {
+    return strings.reduce((result, str, i) => `${result}${str}<span class="hl">${args[i] || ''}</span>`, '');
+}
+
+const str = highlight`Hello, My name is ${name} and I am ${age} years old and my email address is ${email}.`;
+document.body.innerHTML = str;
