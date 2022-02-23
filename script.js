@@ -479,17 +479,35 @@
 // console.log(division);
 
 //In order to destructure it unordered, change the array into an object
-function calculations(a, b) {
-    return {
-            add: a + b,
-            substract: a - b,
-            multiply: a * b,
-            divide: a / b
-        }
+// function calculations(a, b) {
+//     return {
+//             add: a + b,
+//             substract: a - b,
+//             multiply: a * b,
+//             divide: a / b
+//         }
+// }
+
+// const {divide = 'No Operation is Done', add, substract, multiply} = calculations(2, 4);
+// console.log(add);
+// console.log(substract);
+// console.log(multiply);
+// console.log(divide);
+
+//Destructuring on Arguments
+const student1 = {
+    name: "Muhammad Mujahid",
+    age: 23,
+    email: "muhammadmujahid14@gmail.com",
+    score:{
+        task: 80,
+        midExam: 85,
+        finalExam: 90
+    }
 }
 
-const {divide = 'No Operation is Done', add, substract, multiply} = calculations(2, 4);
-console.log(add);
-console.log(substract);
-console.log(multiply);
-console.log(divide);
+function printStudent({name, age, score: {task, midExam, finalExam}}) {
+    return `Hello, My Name is ${name}. I am ${age} years old. My Final Exam Grade is ${finalExam}`;
+}
+
+console.log(printStudent(student1));
