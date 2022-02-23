@@ -1,3 +1,4 @@
+//Object in Javascript---------------------------------------------------------------------------------------
 //Ways to create an object
 //1. Literally created object
 //The Disadvantage is that this kind of object is not effective for creating many
@@ -42,6 +43,7 @@
 //     this.energy = energy;
 // }
 
+//Prototype in Javascript-------------------------------------------------------------------------------
 // Students.prototype.eat = function(portions){
 //     this.energy += portions;
 //     return `Enjoy The Food ${this.name}!`;
@@ -59,7 +61,7 @@
 
 // let student1 = new Students("Muhammad", 10);
 
-//Closure Concept Implementation
+//Closure Concept Implementation--------------------------------------------------------------------------------
 // function init() {
 //     return function(name) {
 //         console.log(name);
@@ -96,7 +98,7 @@
 // console.log(add());
 // console.log(add());
 
-//Simple Arrow Function
+//Simple Arrow Function--------------------------------------------------------------------------------------
 // const printName = (name) => {
 //     return `Hello, ${name}`;
 // }
@@ -125,8 +127,7 @@
 // let lettersOfEach = students.map(name => ({ name, letters: name.length }));
 // console.table(lettersOfEach);
 
-//This Concept on Arrow Function
-
+//This Concept on Arrow Function----------------------------------------------------------------------------
 //Constructor Made Object
 // const students = function(){
 //     this.name = 'Mamat';
@@ -184,7 +185,7 @@
 //     }, 600);
 // })
 
-//Higher Order Function
+//Higher Order Function--------------------------------------------------------------------------------------
 // function doTask(task, done) {
 //     console.log(`The ${task} is now in the doing`);
 //     done();
@@ -196,7 +197,7 @@
 
 // doTask('New Software AG API', done);
 
-//"Filter", "Map", "Reduce" Function in Higher Order Function Concept
+//"Filter", "Map", "Reduce" Function in Higher Order Function Concept---------------------------------------------
 //Initial Array
 // const numbers = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
@@ -453,15 +454,42 @@
 // console.log(value);
 
 //Getting Field in an Object and after that sending it as a function parameter
-const employee = {
-    id: 123,
-    name: 'Muhammad',
-    age: 23,
-    email: 'muhammadmujahid14@gmail.com'
+// const employee = {
+//     id: 123,
+//     name: 'Muhammad',
+//     age: 23,
+//     email: 'muhammadmujahid14@gmail.com'
+// }
+
+// function getIdEmployee({id}) {
+//     return id;
+// }
+
+// console.log(getIdEmployee(employee));
+
+//Destructuring (Function)
+// function calculations(a, b) {
+//     return [a + b, a - b, a * b];
+// }
+// //The Destructuring array varibles order must be exactly the same as the return value order
+// const [addition, substraction, multiplication, division = 'No Operations Done'] = calculations(2, 4);
+// console.log(addition);
+// console.log(substraction);
+// console.log(multiplication);
+// console.log(division);
+
+//In order to destructure it unordered, change the array into an object
+function calculations(a, b) {
+    return {
+            add: a + b,
+            substract: a - b,
+            multiply: a * b,
+            divide: a / b
+        }
 }
 
-function getIdEmployee({id}) {
-    return id;
-}
-
-console.log(getIdEmployee(employee));
+const {divide = 'No Operation is Done', add, substract, multiply} = calculations(2, 4);
+console.log(add);
+console.log(substract);
+console.log(multiply);
+console.log(divide);
