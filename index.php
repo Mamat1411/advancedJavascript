@@ -37,6 +37,11 @@
             <p>Total Duration: <span class="total-duration"></span></p>
         </li>
     </ol> -->
+    <!-- <ul>
+        <li class="name">Muhammad</li>
+        <li class="name">Sari</li>
+        <li class="name">Mamat</li>
+    </ul> -->
 <script src="script.js"></script>
 </body>
 </html>

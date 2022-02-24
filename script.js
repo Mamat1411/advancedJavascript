@@ -495,19 +495,65 @@
 // console.log(divide);
 
 //Destructuring on Arguments
-const student1 = {
-    name: "Muhammad Mujahid",
-    age: 23,
-    email: "muhammadmujahid14@gmail.com",
-    score:{
-        task: 80,
-        midExam: 85,
-        finalExam: 90
+// const student1 = {
+//     name: "Muhammad Mujahid",
+//     age: 23,
+//     email: "muhammadmujahid14@gmail.com",
+//     score:{
+//         task: 80,
+//         midExam: 85,
+//         finalExam: 90
+//     }
+// }
+
+// function printStudent({name, age, score: {task, midExam, finalExam}}) {
+//     return `Hello, My Name is ${name}. I am ${age} years old. My Final Exam Grade is ${finalExam}`;
+// }
+
+// console.log(printStudent(student1));
+
+//for..of
+//for..of is used to create a loop over iterable objects
+//for..of Array
+// const employee = ['Muhammad', 'Sari', 'Mamat'];
+// for(const e of employee){
+//     console.log(e);
+// }
+
+//for..of String
+// const name = 'Muhammad';
+// for(const n of name){
+//     console.log(n);
+// }
+
+//indexing in forEach
+// const employee = ['Muhammad', 'Sari', 'Mamat'];
+// employee.forEach((e, i) => {
+//     console.log(`${e} is at ${i}`);
+// });
+
+//indexing in for..of
+// const employee = ['Muhammad', 'Sari', 'Mamat'];
+// for (const [i, e] of employee.entries()) {
+//     console.log(`${e} is at ${i}`);
+// }
+
+//for..of NodeList
+// const listName = document.querySelectorAll('.name');
+// listName.forEach(e => {
+//     console.log(e.textContent);
+// });
+// for (n of listName) {
+//     console.log(n.innerHTML);
+// }
+
+//for..of arguments
+function addition() {
+    let result = 0;
+    for (args of arguments) {
+        result += args;
     }
+    return result;
 }
 
-function printStudent({name, age, score: {task, midExam, finalExam}}) {
-    return `Hello, My Name is ${name}. I am ${age} years old. My Final Exam Grade is ${finalExam}`;
-}
-
-console.log(printStudent(student1));
+console.log(addition(1, 2, 3, 4, 5));
