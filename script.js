@@ -561,11 +561,42 @@
 //for..in
 //for..in is used to create a loop only for enumerable
 //enumerable means properties in objects
-const employee = {
-    name: 'Muhammad',
-    age: 23,
-    email: 'muhammadmujahid14@gmail.com'
-}
-for (e in employee) {
-    console.log(employee[e]);
-}
+// const employee = {
+//     name: 'Muhammad',
+//     age: 23,
+//     email: 'muhammadmujahid14@gmail.com'
+// }
+// for (e in employee) {
+//     console.log(employee[e]);
+// }
+
+//Spread Operator
+//Spread Operator is used to expand or unpack iterables into a single element.
+// const employee = ['Muhammad', 'Sari', 'Mamat'];
+// console.log(...employee[0]);
+
+//When do we use Spread Operator?
+//First, Spread operator is used when we want to combine 2 arrays
+// const employee = ['Muhammad', 'Sari', 'Mamat'];
+// const employer = ['Mujahid', 'Setya', 'Ningsih'];
+// const people = [...employee, 'Sayang',...employer];
+// const people = employee.concat(employer);
+// console.log(people);
+//Why do we use Spread Operator rather than Array.Concat?
+//It is because using spread operator is more flexible than Array.Concat
+//You can add one or more elements in the middle of the array.
+
+//Second, It is used to copy an array.
+// const employee = ['Muhammad', 'Sari', 'Mamat'];
+// const employee1 = [...employee];
+// employee1[0] = 'Mujahid';
+// console.log(employee);
+
+//Getting Value from html element
+// const listName = document.querySelectorAll('li');
+// const names = [...listName].map(n => n.textContent);
+// console.log(names);
+
+const name = document.querySelector('.myName');
+const letters = [...name.textContent].map(l => `<span>${l}</span>`).join('');
+name.innerHTML = letters;

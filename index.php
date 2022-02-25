@@ -5,11 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Javascript</title>
-    <!-- <style>
-        .hl{
+    <style>
+        body{
             background-color: salmon;
+            text-align: center;
         }
-    </style> -->
+
+        .myName{
+            font-family: arial;
+            font-size: 80px;
+            color: white;
+        }
+        
+        .myName span{
+            display: inline-block;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .myName span:hover{
+            transform: scale(2) translateY(-20px);
+        }
+    </style>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,6 +59,13 @@
         <li class="name">Sari</li>
         <li class="name">Mamat</li>
     </ul> -->
+    <!-- <ul>
+        <li>Muhammad</li>
+        <li>Sari</li>
+        <li>Mamat</li>
+    </ul> -->
+
+    <h1 class="myName">Muhammad</h1>
 <script src="script.js"></script>
 </body>
 </html>
