@@ -548,12 +548,24 @@
 // }
 
 //for..of arguments
-function addition() {
-    let result = 0;
-    for (args of arguments) {
-        result += args;
-    }
-    return result;
-}
+// function addition() {
+//     let result = 0;
+//     for (args of arguments) {
+//         result += args;
+//     }
+//     return result;
+// }
 
-console.log(addition(1, 2, 3, 4, 5));
+// console.log(addition(1, 2, 3, 4, 5));
+
+//for..in
+//for..in is used to create a loop only for enumerable
+//enumerable means properties in objects
+const employee = {
+    name: 'Muhammad',
+    age: 23,
+    email: 'muhammadmujahid14@gmail.com'
+}
+for (e in employee) {
+    console.log(employee[e]);
+}
