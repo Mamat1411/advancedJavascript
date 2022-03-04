@@ -642,7 +642,54 @@
 // console.log(myTeam);
 
 //Rest Parameter for Filtering
-function filterBy(type, ...values) {
-    return values.filter(v => typeof(v) === type);
+// function filterBy(type, ...values) {
+//     return values.filter(v => typeof(v) === type);
+// }
+// console.log(filterBy('boolean', 1, 2, 'Muhammad', false, 10, true, 'Sari'));
+
+//Asynchronous Javascript
+//Callback
+//Callback is a function that is sent as a parameter to the other function
+//Synchronous Callback
+function hello(name) {
+    alert(`Hello, ${name}!`);
 }
-console.log(filterBy('boolean', 1, 2, 'Muhammad', false, 10, true, 'Sari'));
+function message(callback) {
+    const identity = prompt('Please enter your name: ');
+    callback(identity);
+}
+
+message((name) => alert(`Hello, ${name}!`));
+
+const employee = [
+    {
+        name: 'Muhammad',
+        id: '91000',
+        email: 'muhammadmujahid14@gmail.com',
+        division: 'Backend Developer',
+        leadID: 3
+    },
+    {
+        name: 'Sari',
+        id: '14045',
+        email: 'sarisetyaningsih98@gmail.com',
+        division: 'Technical Writer',
+        leadID: 5
+    },
+    {
+        name: 'Mamat',
+        id: '14144',
+        email: 'mlmaster1411@gmail.com',
+        division: 'Frontend Developer',
+        leadID: 2
+    }
+];
+
+console.log('start');
+employee.forEach(m => {
+    for (let i = 0; i < 10000000; i++) {
+        let date = new Date();
+    }
+    console.log(m.name)
+});
+console.log('finish');
