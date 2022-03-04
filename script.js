@@ -597,6 +597,52 @@
 // const names = [...listName].map(n => n.textContent);
 // console.log(names);
 
-const name = document.querySelector('.myName');
-const letters = [...name.textContent].map(l => `<span>${l}</span>`).join('');
-name.innerHTML = letters;
+// const name = document.querySelector('.myName');
+// const letters = [...name.textContent].map(l => `<span>${l}</span>`).join('');
+// name.innerHTML = letters;
+
+//Rest Parameter
+//Rest Parameter is used to represent function's arguments unlimitedly to an array
+// function mine() {
+    // return args;
+    // return Array.from(arguments);
+    // return [...arguments];
+// }
+// console.log(mine(1, 2, 3, 4, 5));
+
+// function add(...numbers) {
+    // let total = 0;
+    // for (const n of numbers) {
+    //     total += n;
+    // }
+    // return total;
+
+    // return numbers.reduce((acc, curr) => acc + curr);
+// }
+// console.log(add(1, 2, 3, 4, 5));
+
+//Rest Parameter in Array Destructuring
+// const group1 = ['Muhammad', 'Sari', 'Mamat', ' Mujahid', 'Setya'];
+// const [chief, vice, ...members] = group1;
+// console.log(chief);
+// console.log(vice);
+// console.log(members);
+
+//Rest Parameter in Object Destructuring
+// const team = {
+//     pm: 'Sari',
+//     fe: 'Setya',
+//     be1: 'Muhammad',
+//     be2: 'Mujahid',
+//     qc: 'Mamat'
+// }
+
+// const {pm, ...myTeam} = team;
+// console.log(pm);
+// console.log(myTeam);
+
+//Rest Parameter for Filtering
+function filterBy(type, ...values) {
+    return values.filter(v => typeof(v) === type);
+}
+console.log(filterBy('boolean', 1, 2, 'Muhammad', false, 10, true, 'Sari'));
