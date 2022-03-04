@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Javascript</title>
     <style>
-        body{
+        /* body{
             background-color: salmon;
             text-align: center;
         }
@@ -25,7 +25,7 @@
 
         .myName span:hover{
             transform: scale(2) translateY(-20px);
-        }
+        } */
     </style>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -65,7 +65,7 @@
         <li>Mamat</li>
     </ul> -->
 
-    <h1 class="myName">Muhammad</h1>
+    <!-- <h1 class="myName">Muhammad</h1> -->
 <script src="script.js"></script>
 </body>
 </html>
