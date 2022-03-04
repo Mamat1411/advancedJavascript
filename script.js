@@ -651,45 +651,91 @@
 //Callback
 //Callback is a function that is sent as a parameter to the other function
 //Synchronous Callback
-function hello(name) {
-    alert(`Hello, ${name}!`);
-}
-function message(callback) {
-    const identity = prompt('Please enter your name: ');
-    callback(identity);
-}
+// function hello(name) {
+//     alert(`Hello, ${name}!`);
+// }
+// function message(callback) {
+//     const identity = prompt('Please enter your name: ');
+//     callback(identity);
+// }
 
-message((name) => alert(`Hello, ${name}!`));
+// message((name) => alert(`Hello, ${name}!`));
 
-const employee = [
-    {
-        name: 'Muhammad',
-        id: '91000',
-        email: 'muhammadmujahid14@gmail.com',
-        division: 'Backend Developer',
-        leadID: 3
-    },
-    {
-        name: 'Sari',
-        id: '14045',
-        email: 'sarisetyaningsih98@gmail.com',
-        division: 'Technical Writer',
-        leadID: 5
-    },
-    {
-        name: 'Mamat',
-        id: '14144',
-        email: 'mlmaster1411@gmail.com',
-        division: 'Frontend Developer',
-        leadID: 2
-    }
-];
+// const employee = [
+    // {
+    //     name: 'Muhammad',
+    //     id: '91000',
+    //     email: 'muhammadmujahid14@gmail.com',
+    //     division: 'Backend Developer',
+    //     leadID: 3
+    // },
+    // {
+    //     name: 'Sari',
+    //     id: '14045',
+    //     email: 'sarisetyaningsih98@gmail.com',
+    //     division: 'Technical Writer',
+    //     leadID: 5
+    // },
+    // {
+    //     name: 'Mamat',
+    //     id: '14144',
+    //     email: 'mlmaster1411@gmail.com',
+    //     division: 'Frontend Developer',
+    //     leadID: 2
+    // }
+// ];
 
+// console.log('start');
+// employee.forEach(m => {
+//     for (let i = 0; i < 10000000; i++) {
+//         let date = new Date();
+//     }
+//     console.log(m.name)
+// });
+// console.log('finish');
+
+//Asynchronous Callback
+// function getEmployeeData(url, successCallback, errorCallback) {
+//     let xhr = new XMLHttpRequest();
+//     xhr.onreadystatechange = function () {
+//         if (xhr.readyState === 4) {
+//             if (xhr.status === 200) {
+//                 successCallback(xhr.response);
+//             } else if(xhr.status === 404) {
+//                 errorCallback();
+//             }
+//         }
+//     }
+//     xhr.open('GET', url);
+//     xhr.send();
+// }
+
+// // function successCallback(results) {
+// //     console.log(results);
+// // }
+
+// // function errorCallback() {
+
+// // }
+// console.log('start');
+// getEmployeeData('data/employee.json', (results) => {
+//     const employee = JSON.parse(results);
+//     employee.forEach(e => console.log(e.name));
+// }, () => {
+
+// });
+// console.log('finish');
+
+//Asynchronous JQuery Callback
 console.log('start');
-employee.forEach(m => {
-    for (let i = 0; i < 10000000; i++) {
-        let date = new Date();
+$.ajax({
+    url: 'data/employee.json',
+    success: (empl) => {
+        empl.forEach(e => console.log(e.name));
+        // console.log(empl);
+    },
+    error: (e) => {
+        console.log(e.responseText);
     }
-    console.log(m.name)
 });
 console.log('finish');
