@@ -727,15 +727,16 @@
 // console.log('finish');
 
 //Asynchronous JQuery Callback
-console.log('start');
-$.ajax({
-    url: 'data/employee.json',
-    success: (empl) => {
-        empl.forEach(e => console.log(e.name));
-        // console.log(empl);
-    },
-    error: (e) => {
-        console.log(e.responseText);
-    }
-});
-console.log('finish');
+// console.log('start');
+// $.ajax({
+//     url: 'data/employee.json',
+//     success: (empl) => {
+//         empl.forEach(e => console.log(e.name));
+//     },
+//     error: (e) => {
+//         console.log(e.responseText);
+//     }
+// });
+// console.log('finish');
+
+//Asynchronous Callback Exercise with Open API
