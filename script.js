@@ -814,15 +814,94 @@
 // });
 
 //Vanilla Javascript Ajax
-const xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function () {
-    if (xhr.status === 200) {
-        if (xhr.readyState === 4) {
-            console.log(JSON.parse(xhr.response));
-        }
-    } else {
-        console.log(xhr.responseText);
-    }
-}
-xhr.open('get', 'http://www.omdbapi.com/?apikey=bc20012f&s=avengers');
-xhr.send();
+// const xhr = new XMLHttpRequest();
+// xhr.onreadystatechange = function () {
+//     if (xhr.status === 200) {
+//         if (xhr.readyState === 4) {
+//             console.log(JSON.parse(xhr.response));
+//         }
+//     } else {
+//         console.log(xhr.responseText);
+//     }
+// };
+// xhr.open('get', 'http://www.omdbapi.com/?apikey=bc20012f&s=avengers');
+// xhr.send();
+
+//Fetch
+//Fetch Returns Promise Value
+// fetch('http://www.omdbapi.com/?apikey=bc20012f&s=avengers')
+// .then(response => response.json())
+// .then(response => console.log(response));
+
+//Promise
+//Promise is an object representing a success or failure of an upcoming asynchronous event
+//states (fulfilled / rejected / pending)
+//callback (resolve / reject / finally)
+//action (then / catch)
+
+//1st example without pending
+// let fulfilled1 = false;
+// const promise1 = new Promise((resolve, reject) => {
+//     if (fulfilled1) {
+//         resolve('Promise Fulfilled');
+//     } else {
+//         reject('Promise Rejected');
+//     }
+// });
+// promise1
+// .then(response => console.log('Fulfilled : ' + response))
+// .catch(response => console.log('Rejected : ' + response));
+
+//2nd example with pending
+// let fulfilled2 = true;
+// const promise2 = new Promise((resolve, reject) => {
+//     if (fulfilled2) {
+//         setTimeout(() => {
+//            resolve('Promise Fulfilled after a moment') ;
+//         }, 2000);
+//     } else {
+//         setTimeout(() => {
+//            reject('Promise Rejected after a moment'); 
+//         }, 2000);
+//     }
+// });
+
+// console.log('Start');
+// // console.log(promise2.then(() => console.log(promise2)));
+// promise2
+// .finally(() => console.log('Done Waiting'))
+// .then(response => console.log('Fulfilled : ' + response))
+// .catch(response => console.log('Rejected : ' + response));
+// console.log('Finish');
+
+//Promise.all()
+// It is used to run many promises simultaneously
+const movies = new Promise(resolve => {
+    setTimeout(() => {
+       resolve([{
+            title: 'Avengers',
+            director: 'Muhammad',
+            actors: 'Sari, Mamat'
+       }]);
+    }, 1000);
+});
+
+const weather = new Promise(resolve => {
+    setTimeout(() => {
+        resolve([{
+            city: 'Yogyakarta',
+            temperature: 26,
+            condition: 'Cloudy'
+        }]);
+    }, 500);
+});
+
+// movies.then(response => console.log(response));
+// weather.then(response => console.log(response));
+Promise.all([movies, weather])
+// .then(response => console.log(response));
+.then(response => {
+    const [movies, weather] = response;
+    console.log(movies);
+    console.log(weather);
+});
