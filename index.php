@@ -47,7 +47,7 @@
 
     <!-- <h1 class="myName">Muhammad</h1> -->
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row mt-5">
             <div class="col">
                 <h1>Advanced Javascript API Exercise</h1>
@@ -66,14 +66,13 @@
         <div class="row movie-container">
             
         </div>
-    </div>
+    </div> -->
 
     <!-- Modal -->
-    <div class="modal fade" id="movieDetailModal" tabindex="-1" aria-labelledby="movieDetailModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="movieDetailModal" tabindex="-1" aria-labelledby="movieDetailModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="movieDetailModalLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -84,7 +83,7 @@
             </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
