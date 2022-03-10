@@ -773,34 +773,76 @@
 // });
 
 //Using Fetch
-const searchButton = document.querySelector('.search-button');
-searchButton.addEventListener('click', function () {
-    const inputKeyword = document.querySelector('.input-keyword');
-    fetch('http://www.omdbapi.com/?apikey=bc20012f&s=' + inputKeyword.value)
-        .then(response => response.json())
-        .then(response => {
-            const movies = response.Search;
-            let cards = '';
-            movies.forEach(m => cards += showCards(m));
-            const movieContainer = document.querySelector('.movie-container');
-            movieContainer.innerHTML = cards;
+// const searchButton = document.querySelector('.search-button');
+// searchButton.addEventListener('click', function () {
+//     const inputKeyword = document.querySelector('.input-keyword');
+//     fetch('http://www.omdbapi.com/?apikey=bc20012f&s=' + inputKeyword.value)
+//         .then(response => response.json())
+//         .then(response => {
+//             const movies = response.Search;
+//             let cards = '';
+//             movies.forEach(m => cards += showCards(m));
+//             const movieContainer = document.querySelector('.movie-container');
+//             movieContainer.innerHTML = cards;
 
-            //when read more button is pushed
-            const readMore = document.querySelectorAll('.modal-detail-button');
-            readMore.forEach(r => {
-                r.addEventListener('click', function () {
-                   const imdbid = this.dataset.imdbid;
-                   fetch('http://www.omdbapi.com/?apikey=bc20012f&i=' + imdbid)
-                    .then(response => response.json())
-                    .then(response => {
-                        const movieDetail = showDetails(response);
-                        const modalBody = document.querySelector('.modal-body');
-                        modalBody.innerHTML = movieDetail;
-                    });
-                });
-            });
-        });
+//             //when read more button is pushed
+//             const readMore = document.querySelectorAll('.modal-detail-button');
+//             readMore.forEach(r => {
+//                 r.addEventListener('click', function () {
+//                    const imdbid = this.dataset.imdbid;
+//                    fetch('http://www.omdbapi.com/?apikey=bc20012f&i=' + imdbid)
+//                     .then(response => response.json())
+//                     .then(response => {
+//                         const movieDetail = showDetails(response);
+//                         const modalBody = document.querySelector('.modal-body');
+//                         modalBody.innerHTML = movieDetail;
+//                     });
+//                 });
+//             });
+//         });
+// });
+
+//Fetch Refactoring (Async Await)
+const searchButton = document.querySelector('.search-button');
+searchButton.addEventListener('click', async function () {
+    const inputKeyword = document.querySelector('.input-keyword');
+    const movies = await getMovies(inputKeyword.value);
+    updateUI(movies);
 });
+
+//Event Binding for Read More Button
+document.addEventListener('click', async function (e) {
+    if (e.target.classList.contains('modal-detail-button')) {
+        const imdbid = e.target.dataset.imdbid;
+        const movieDetail = await getMovieDetails(imdbid);
+        updateUIDetail(movieDetail);
+    }
+});
+
+function getMovieDetails(imdbid) {
+    return fetch('http://www.omdbapi.com/?apikey=bc20012f&i=' + imdbid)
+            .then(response => response.json())
+            .then(response => response);
+}
+
+function updateUIDetail(movie) {
+    const movieDetail = showDetails(movie);
+    const modalBody = document.querySelector('.modal-body');
+    modalBody.innerHTML = movieDetail;
+}
+
+function getMovies(keyword) {
+    return fetch('http://www.omdbapi.com/?apikey=bc20012f&s=' + keyword)
+            .then(response => response.json())
+            .then(response => response.Search);
+}
+
+function updateUI(movies) {
+    let cards = '';
+    movies.forEach(m => cards += showCards(m));
+    const movieContainer = document.querySelector('.movie-container');
+    movieContainer.innerHTML = cards;
+}
 
 function showCards(m) {
     return `
