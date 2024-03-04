@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- <h3>My Videos</h3>
     <ul>
@@ -47,7 +49,7 @@
 
     <h1 class="myName">Muhammad</h1> -->
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row mt-5">
             <div class="col">
                 <h1>Advanced Javascript API Exercise</h1>
@@ -66,10 +68,10 @@
         <div class="row movie-container">
             
         </div>
-    </div>
+    </div> -->
 
     <!-- Modal -->
-    <div class="modal fade" id="movieDetailModal" tabindex="-1" aria-labelledby="movieDetailModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="movieDetailModal" tabindex="-1" aria-labelledby="movieDetailModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
             <div class="modal-header">
@@ -83,11 +85,24 @@
             </div>
             </div>
         </div>
+    </div> -->
+
+    <!-- DOM Manipulation -->
+    <div class="container" id="container">
+        <label>Choose one of these cars</label>
+        <select name="selectForm" id="selectForm">
+            <option selected>Choose....</option>
+        </select>
+        
+        <!-- this is where the checkbox generated -->
     </div>
+    <!-- DOM Manipulation -->
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
